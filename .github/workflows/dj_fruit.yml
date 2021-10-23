@@ -28,8 +28,8 @@ jobs:
                   
           - name: run
             run: |  
-             sed -i "15c#${{ secrets.TEST_COOKIE }}" ./config.yaml
              sed  -i '16,17d//g`  ./.config.yaml
+             sed -i "15c#${{ secrets.TEST_COOKIE }}" ./config.yaml
              sed 's/&/\n/g' ./config.yaml
              sed -i "15,24s/^/  - /g" ./config.yaml
              sed -i "s/aaa/${{ secrets.TG_BOT_TOKEN }}/g" ./config.yaml
